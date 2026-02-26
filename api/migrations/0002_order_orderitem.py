@@ -16,6 +16,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Order',
             fields=[
+                # new tables can still use INT if desired; using AutoField for consistency
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('status', models.CharField(choices=[('PENDING', 'Pending'), ('COMPLETED', 'Completed'), ('CANCELLED', 'Cancelled')], default='PENDING', max_length=20)),
